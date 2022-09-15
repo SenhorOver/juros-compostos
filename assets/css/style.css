@@ -63,6 +63,10 @@ div.first-page main.content form div.area input {
   margin-left: 10px;
   padding: 2px 5px;
   font-size: 1.2em;
+  outline: none;
+}
+div.first-page main.content form div.area input.error {
+  border: 2px solid red;
 }
 div.first-page main.content form div.area select {
   width: 400px;
@@ -70,6 +74,10 @@ div.first-page main.content form div.area select {
   padding: 2px 5px;
   font-size: 1.2em;
   text-align: center;
+  outline: none;
+}
+div.first-page main.content form div.area select.error {
+  border: 2px solid red;
 }
 div.first-page main.content form div.area:nth-child(3) label {
   min-width: 135.5px;

@@ -63,6 +63,11 @@ div.first-page{
                     margin-left: 10px;
                     padding: 2px 5px;
                     font-size: 1.2em;
+                    outline: none;
+
+                    &.error{
+                        border: 2px solid red;
+                    }
                 }
                 select{
                     width: 400px;
@@ -70,6 +75,10 @@ div.first-page{
                     padding: 2px 5px;
                     font-size: 1.2em;
                     text-align: center;
+                    outline: none;
+                    &.error{
+                        border: 2px solid red;
+                    }
                 }
             
                 &:nth-child(3){
