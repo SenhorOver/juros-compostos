@@ -114,6 +114,12 @@ div.first-page{
                 }
             }
         }
+
+        ul.errors{
+            padding-left: 25px;
+            list-style: none;
+            color: red;
+        }
     }
 
     &.none{
@@ -122,6 +128,57 @@ div.first-page{
 }
 
 div.second-page{
+    width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: var(--white);
+
+    header.header{
+        border-bottom: 3px solid var(--bg-body);
+        padding: 15px;
+        text-align: center;
+        h1.title{
+            font-size: 3.5em;
+        }
+    }
+
+    main.content{
+        padding: 35px;
+        text-align: center;
+        h2.title-answer{
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        p.text-answer{
+            font-size: 1.7em;
+            margin-bottom: 50px;
+        }
+        div.button{
+            margin-top: 50px;
+            width: 200px;
+            height: 28px;
+            margin: auto;
+            position: relative;
+            background-color: var(--shadow);
+            button{
+                width: 200px;
+                padding: 2px;
+                font-size: 1.3em;
+                background-color: var(--white);
+                border: 1px solid var(--black);
+                outline: none;
+                cursor: pointer;
+                position: absolute;
+                top: -2px;
+                right: -2px;
+
+                &:active{
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+    }
 
     &.none{
         display: none;
