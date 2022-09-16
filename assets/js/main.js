@@ -64,7 +64,7 @@ const Main = {
             
             valid = this.Validations.isEmpty.bind(this)(e)
 
-            number = this.Validations.isNumbers.bind(this)(e)
+            numbers = this.Validations.isNumbers.bind(this)(e)
 
             if(valid && selected && numbers) return true
             return false
@@ -97,7 +97,6 @@ const Main = {
                 const wdPercent = el.value.replace('%', '')
                 const dot = wdPercent.replace(',','.')
                 const isNumber = Number(dot)
-                console.log(isNumber);
                 if(isNumber === 0 || isNaN(isNumber)) {
                     el.classList.add('error')
                     if(valid) this.Errors.errorNumber('Campo de mensalidade e/ou taxa de juros devem ser números válidos')
@@ -112,21 +111,18 @@ const Main = {
     UsefulMethods: {
         sendInfos(inputs, select){
             const json = JSON.stringify({expr: `${inputs[1].value.replace(',','.').replace('%', '')}*(((1+${(inputs[2].value.replace(',','.').replace('%', '')) / 100})^${select.value * 12}-1)/${(inputs[2].value.replace(',','.').replace('%', '')) / 100})`})
-            console.log(json);
             fetch('http://api.mathjs.org/v4/', {
                 method: 'POST',
                 body: json,
                 headers: {'content-type': 'application/json'}
             })
             .then(response => {
-                console.log('resposta:', response);
                 return response.json()
             })    
             .then(json => {
                 const page2 = document.querySelector('.second-page')
                 page2.classList.remove('none')
                 Main.UsefulMethods.showInfos(inputs, select,json)
-                console.log(json);
             })
         },
 
